@@ -1,1 +1,1 @@
-C:\Users\usuario\Documents\UiPath\Qualidade do Ar\Arquivos\dados
+C:\Users\gus\Downloads\IndiceDeQualidadeDoAR-master\Qualidade do Ar\Arquivos\dados
