@@ -691,7 +691,7 @@
                               <av:PointCollection x:Key="ConnectorLocation">440,740 480,740</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Sequence sap2010:Annotation.AnnotationText="" DisplayName="📊 Montar 3 gráficos" sap:VirtualizedContainerService.HintSize="518,2698" sap2010:WorkflowViewState.IdRef="Sequence_39">
+                          <Sequence sap2010:Annotation.AnnotationText="" DisplayName="📊 Montar 3 gráficos" sap:VirtualizedContainerService.HintSize="200,97" sap2010:WorkflowViewState.IdRef="Sequence_39">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2586,15 +2586,17 @@
                                   </sap:WorkflowViewStateService.ViewState>
                                   <Sequence DisplayName="📧 Enviar arquivo por email" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_53">
                                     <Sequence.Variables>
-                                      <Variable x:TypeArguments="x:String" Name="email" />
+                                      <Variable x:TypeArguments="x:String" Name="emailDestinatario" />
+                                      <Variable x:TypeArguments="x:String" Name="emailRemetente" />
                                     </Sequence.Variables>
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <ui:ReadTextFile Content="[email]" DisplayName="Read Text File" FileName="Arquivos\email.txt" sap:VirtualizedContainerService.HintSize="334,84" sap2010:WorkflowViewState.IdRef="ReadTextFile_2" />
-                                    <ui:SendOutlookMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Account="pedroeimert@hotmail.com" Body="Sobre o índice de qualidade do ar na Cidade do Rio de Janeiro, medidos todos os dias de 2012 a 2018, e eu maior poluente." DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" IsBodyHtml="False" IsDraft="False" Subject="Aqui está o resultado da pesquisa" To="[email]">
+                                    <ui:ReadTextFile Content="[emailDestinatario]" DisplayName="Read Text File" FileName="Arquivos\emailDestinatario.txt" sap:VirtualizedContainerService.HintSize="334,84" sap2010:WorkflowViewState.IdRef="ReadTextFile_2" />
+                                    <ui:ReadTextFile Content="{x:Null}" DisplayName="Read Text File" FileName="Arquivos\emailRemetente.txt" sap:VirtualizedContainerService.HintSize="334,84" sap2010:WorkflowViewState.IdRef="ReadTextFile_5" />
+                                    <ui:SendOutlookMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Account="[emailRemetente]" Body="Sobre o índice de qualidade do ar na Cidade do Rio de Janeiro, medidos todos os dias de 2012 a 2018, e eu maior poluente." DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" IsBodyHtml="False" IsDraft="False" Subject="Aqui está o resultado da pesquisa" To="[emailDestinatario]">
                                       <ui:SendOutlookMail.Files>
                                         <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
                                           <InArgument x:TypeArguments="x:String">Arquivos/dados.pdf</InArgument>
