@@ -3,6 +3,7 @@
   "description": "Robô que analisa dados da qualidade do ar na cidade do Rio de Janeiro e plota um gráfico com o modelo coletado.",
   "main": "Main.xaml",
   "dependencies": {
+    "BalaReva.CSV.Activities": "[2019.1.0]",
     "BalaReva.Excel.Activities": "[2019.4.0]",
     "UiPath.Excel.Activities": "[2.8.1-preview]",
     "UiPath.Mail.Activities": "[1.8.1-preview]",
